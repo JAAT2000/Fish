@@ -5,26 +5,27 @@ import java.util.Scanner;
 public class Menu extends Fish_Functions {
     Fish_Functions fishobj = new Fish_Functions();
     Scanner input = new Scanner(System.in);
-    int option = 0, run_counter = 0, feeding_time = 0, cleaning_time = 0;
-    String fish_name = "";
+    int option = 0;
     void menu() throws IOException {
+        stopWatch.start();
         System.out.println("<°))))><");
         System.out.println("1. Feed \n2. Clean Tank \n3. Debug \n 4. Exit");
 
         option = input.nextInt();
 
-        while (option != 4) {
-
-            if(run_counter == 0) {
-
-            }
+        do {
+            trackersobj.time();
             switch (option) {
                 case 1 -> {
                     fishobj.feed();
+                    System.out.println("<°))))><");
+                    System.out.println("1. Feed \n2. Clean Tank \n3. Debug \n 4. Exit");
                     option = input.nextInt();
                 }
                 case 2 -> {
                     fishobj.clean_tank();
+                    System.out.println("<°))))><");
+                    System.out.println("1. Feed \n2. Clean Tank \n3. Debug \n 4. Exit");
                     option = input.nextInt();
                 }
                 case 3 -> {
@@ -34,13 +35,7 @@ public class Menu extends Fish_Functions {
                 default -> {
                 }
             }
-            run_counter++;
-        }
-    }
 
-    void first_time() {
-        System.out.println("Let's name your fish. Type any name you like:");
-        fish_name = input.next();
-
+        } while (option != 4);
     }
 }
