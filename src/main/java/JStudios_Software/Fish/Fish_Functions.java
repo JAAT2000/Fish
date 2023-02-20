@@ -29,7 +29,7 @@ public class Fish_Functions extends Trackers {
         writer();
         System.out.println("the tank has been cleaned!");
     }
-    void debug() {
+    void debug() throws InterruptedException {
         trackersobj.reader();
     }
 }

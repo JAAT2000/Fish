@@ -7,7 +7,6 @@ import org.apache.commons.lang3.time.StopWatch;
 public class Trackers {
     PrintWriter writer;
     StopWatch stopWatch = new StopWatch();
-    Scanner input = new Scanner(System.in);
     int feeding = 0, cleaning = 0;
     public void create_writer() throws IOException {
         try {
@@ -30,13 +29,6 @@ public class Trackers {
             System.out.println("the current happiness is " + happy_file);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-    public void time() {
-        long time_current = stopWatch.getTime();
-        if (time_current == 10) {
-            System.out.println("we got here");
-            stopWatch.stop();
         }
     }
 }
